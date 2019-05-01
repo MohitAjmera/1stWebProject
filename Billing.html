@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mobile Billing</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            div {
+                width: 350px;
+                padding: 20px;
+                border: 10px solid black;
+                margin: 0;
+        }
+        </style>
+</head>
+<body bgcolor="skyblue">
+        <center>
+        <div>
+        <center><h2>MOBILE DATA BILLING</h2></center>
+        <br>
+            DATA USED(in GB) :<input type = "number" id = "data1">
+            <br><br>
+			<button onclick = "CALAMT()" id = "btn">GENRATE BILL</button>
+            <br><br>
+			<p id = "demo"></p>
+        </div>
+        </center>
+<script>
+function CALAMT()
+{ 
+	var data=document.getElementById("data1").value;
+	if(data<=1)
+	{
+		document.getElementById("demo").innerHTML = data*102.4 + " rupees";
+	}
+	else if(data<=2)
+	{
+		document.getElementById("demo").innerHTML = ((data-1)*102.4) + 90 + " rupees";
+	}
+	else if(data<=3)
+	{
+		document.getElementById("demo").innerHTML = ((data-2)*204.8) + 150 + " rupees";
+	}
+	else if(data<=4)
+	{
+		document.getElementById("demo").innerHTML = ((data-3)*146.28) + 250 + " rupees";
+	}
+	else if(data<=4.3)
+	{
+		document.getElementById("demo").innerHTML = 300 + " rupees";
+	}
+	else if(data<=5)
+	{
+		document.getElementById("demo").innerHTML = ((data-4.3)*102.4) + 300 + " rupees";
+	}
+	else
+	{
+		document.getElementById("demo").innerHTML = "Out of range(Up to 5 only)";
+
+	}
+
+}
+</script>
+</html>
